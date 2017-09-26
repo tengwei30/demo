@@ -17,12 +17,12 @@ const todos = (state = [], action) => {
 				return item.id != action.id
 			})
 		 case 'TOGGLE_TODO':
-            return state.map( t => {
-                if(t.id != action.id) {
-                    return t
+            return state.map( item => {
+                if(item.id != action.id) {
+                    return item
                 }
-                return Object.assign({},t,{
-                    completed : !t.completed
+                return Object.assign({},item,{
+                    completed : !item.completed
                     
                 })
             })
